@@ -120,7 +120,6 @@ public class PrefsAPI : QSingleton<PrefsAPI>
     }
 
     #endregion
-
     #region 角色数据
     private const int maxSkillLev = 10; //技能的最大等级
     private const int maxSkillCount = 4;  //技能个数

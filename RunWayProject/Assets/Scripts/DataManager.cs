@@ -1,6 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
+using System.Text;
+
 
 /// <summary>
 /// 游戏的所有数据管理
@@ -10,15 +13,16 @@ public class DataManager : QSingleton<DataManager>
 
     private DataManager() { }
 
-    // Use this for initialization
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
+    public void ReadText( string textname )
     {
 
+        string path = Application.dataPath + "/Resources/TextFiles/" + textname + ".txt";
+
+        StreamReader sr = new StreamReader( path, Encoding.Default );
+        string line;
+        while(( line = sr.ReadLine() ) != null)
+        {
+            print( line );
+        }
     }
 }
